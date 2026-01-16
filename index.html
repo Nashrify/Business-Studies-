@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Studies Notes Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 text-gray-800">  <!-- Navbar -->  <header class="bg-white/80 backdrop-blur border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-extrabold tracking-tight text-indigo-600">BizStudies Hub</h1>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#" class="hover:text-indigo-600">Home</a>
+        <a href="#topics" class="hover:text-indigo-600">Topics</a>
+        <a href="#about" class="hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>  <!-- Hero -->  <section class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+      <span class="inline-block mb-4 px-4 py-1 text-xs font-semibold bg-indigo-100 text-indigo-700 rounded-full">Form Two • Business Studies</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Form Two Business Studies Notes</h2>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600">A professionally structured repository of Form Two Business Studies notes, aligned to the approved syllabus and optimized for accessibility, clarity, and consistent academic use.</p>
+    </div>
+  </section>  <!-- Topics -->  <section id="topics" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="flex justify-between items-end mb-10">
+      <div>
+        <h3 class="text-3xl font-bold">Form Two Topics Covered</h3>
+        <p class="text-gray-500 mt-2">Select a topic to access the corresponding study materials</p>
+      </div>
+    </div><div id="notesGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+  </section>  <!-- About -->  <section id="about" class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold mb-4">Academic Use Statement</h3>
+      <p class="text-gray-600 leading-relaxed">This website is designed for educational purposes only. All materials are intended to support classroom instruction, guided revision, and independent study for Form Two students following the Business Studies syllabus.</p>
+    </div>
+  </section>  <!-- Footer -->  <footer class="border-t bg-white py-6">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+      <p>&copy; 2026 Form Two Business Studies. All rights reserved.</p>
+      <p>Educational Resource • Static Website Architecture</p>
+    </div>
+  </footer>  <!-- JavaScript -->  <script>
+    const notes = [
+      { title: "Production", tag: "Topic 1", file: "notes/topic-1-production.pdf" },
+      { title: "Financing Small-Sized Businesses", tag: "Topic 2", file: "notes/topic-2-financing-small-businesses.pdf" },
+      { title: "Small Business Management", tag: "Topic 3", file: "notes/topic-3-small-business-management.pdf" },
+      { title: "Warehousing & Inventory Management", tag: "Topic 4", file: "notes/topic-4-warehousing-inventory-management.pdf" },
+      { title: "Identification of Business Opportunities", tag: "Topic 5", file: "notes/topic-5-business-opportunities.pdf" }
+    ];
+
+    const grid = document.getElementById('notesGrid');
+
+    notes.forEach(note => {
+      const card = document.createElement('div');
+      card.className = "group bg-white rounded-2xl border shadow-sm hover:shadow-lg transition overflow-hidden";
+      card.innerHTML = `
+        <div class="p-6">
+          <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold bg-indigo-50 text-indigo-600 rounded-full">${note.tag}</span>
+          <h4 class="text-lg font-semibold mb-4 group-hover:text-indigo-600 transition">${note.title}</h4>
+          <a href="${note.file}" target="_blank" class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:underline">
+            View / Download
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script></body>
+</html>
